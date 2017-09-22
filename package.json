@@ -8,13 +8,9 @@
 	},
 	"scripts": {
 		"start": "node src/server.js",
-		"lint": "eslint .",
-		"lint-fix": "eslint . --fix",
-		"test": "ava && npm run lint"
+		"lint": "eslint . --fix",
+		"test": "npm run lint && ava"
 	},
-	"pre-commit": [
-		"lint-fix"
-	],
 	"keywords": [
 		"freecodecamp",
 		"image",
@@ -42,7 +38,6 @@
 		"eslint-config-prettier": "^2.5.0",
 		"eslint-plugin-prettier": "^2.3.1",
 		"istanbul": "^0.4.5",
-		"pre-commit": "^1.2.2",
 		"prettier": "^1.7.0",
 		"supertest": "^3.0.0"
 	},
