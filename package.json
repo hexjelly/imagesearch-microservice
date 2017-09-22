@@ -8,8 +8,13 @@
 	},
 	"scripts": {
 		"start": "node src/server.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"lint": "eslint .",
+		"lint-fix": "eslint . --fix",
+		"test": "ava && npm run lint"
 	},
+	"pre-commit": [
+		"lint-fix"
+	],
 	"keywords": [
 		"freecodecamp",
 		"image",
@@ -31,9 +36,17 @@
 		"google-images": "^2.1.0"
 	},
 	"devDependencies": {
+		"ava": "^0.22.0",
 		"coveralls": "^2.13.1",
+		"eslint": "^4.7.2",
+		"eslint-config-prettier": "^2.5.0",
+		"eslint-plugin-prettier": "^2.3.1",
 		"istanbul": "^0.4.5",
-		"mocha": "^3.5.3",
+		"pre-commit": "^1.2.2",
+		"prettier": "^1.7.0",
 		"supertest": "^3.0.0"
+	},
+	"prettier": {
+		"useTabs": true
 	}
 }
