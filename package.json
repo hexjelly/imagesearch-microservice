@@ -9,7 +9,8 @@
 	"scripts": {
 		"start": "node src/server.js",
 		"lint": "eslint . --fix",
-		"test": "npm run lint && ava"
+		"pretest": "npm run lint",
+		"test": "ava"
 	},
 	"keywords": [
 		"freecodecamp",
