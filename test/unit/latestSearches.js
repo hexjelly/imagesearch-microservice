@@ -52,6 +52,7 @@ test("latestSearches: gives correct results with >10 history entries", t => {
 	];
 	let result = latestSearches(searchHistory);
 	t.deepEqual(result, [
+		"test1",
 		"test2",
 		"test3",
 		"test4",
@@ -60,8 +61,7 @@ test("latestSearches: gives correct results with >10 history entries", t => {
 		"test7",
 		"test8",
 		"test9",
-		"test10",
-		"test11"
+		"test10"
 	]);
 
 	// add 3 more
@@ -83,15 +83,15 @@ test("latestSearches: gives correct results with >10 history entries", t => {
 	];
 	result = latestSearches(searchHistory);
 	t.deepEqual(result, [
+		"test1",
+		"test2",
+		"test3",
+		"test4",
 		"test5",
 		"test6",
 		"test7",
 		"test8",
 		"test9",
-		"test10",
-		"test11",
-		"test12",
-		"test13",
-		"test14"
+		"test10"
 	]);
 });
