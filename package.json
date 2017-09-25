@@ -10,7 +10,8 @@
 		"start": "node src/server.js",
 		"lint": "eslint . --fix",
 		"pretest": "npm run lint",
-		"test": "ava"
+		"report": "nyc --all report --reporter=html",
+		"test": "nyc --all ava"
 	},
 	"keywords": [
 		"freecodecamp",
@@ -38,7 +39,7 @@
 		"eslint": "^4.7.2",
 		"eslint-config-prettier": "^2.5.0",
 		"eslint-plugin-prettier": "^2.3.1",
-		"istanbul": "^0.4.5",
+		"nyc": "^11.2.1",
 		"prettier": "^1.7.0",
 		"supertest": "^3.0.0"
 	},

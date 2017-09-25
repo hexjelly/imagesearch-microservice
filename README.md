@@ -1,6 +1,6 @@
 # Image Search Abstraction Layer
 
-[![Build Status](https://travis-ci.org/hexjelly/imagesearch-microservice.svg)](https://travis-ci.org/hexjelly/imagesearch-microservice) [![Greenkeeper badge](https://badges.greenkeeper.io/hexjelly/imagesearch-microservice.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/hexjelly/imagesearch-microservice.svg)](https://travis-ci.org/hexjelly/imagesearch-microservice) [![Coverage Status](https://coveralls.io/repos/github/hexjelly/imagesearch-microservice/badge.svg?branch=master)](https://coveralls.io/github/hexjelly/imagesearch-microservice?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/hexjelly/imagesearch-microservice.svg)](https://greenkeeper.io/)
 
 A microservice API abstracting over Google image search. Made for [this freeCodeCamp challenge](https://www.freecodecamp.org/challenges/image-search-abstraction-layer).
 
