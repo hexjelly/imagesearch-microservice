@@ -12,7 +12,7 @@ const searchHistory = [];
 router.get("/imagesearch/:keyword", async (req, res) => {
 	try {
 		res.json(
-			await imageSearch(req.params.keyword, searchHistory, req.query.page)
+			await imageSearch(req.params.keyword, searchHistory, req.query.offset)
 		);
 	} catch (e) {
 		res.status(400).json({ error: e.message });
