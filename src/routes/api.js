@@ -4,7 +4,7 @@ const imageSearch = require("../models/api/imageSearch");
 const latestSearches = require("../models/api/latestSearches");
 
 router.get("/", (req, res) => {
-	res.send("api index");
+	res.status(400).json({ error: "Invalid API endpoint" });
 });
 
 const searchHistory = [];
