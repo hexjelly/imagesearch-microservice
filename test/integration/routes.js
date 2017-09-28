@@ -30,5 +30,8 @@ test("api/imagesearch/", async t => {
 });
 
 test("/", async t => {
-	t.fail();
+	const res = await supertest(require("../../src/app")).get("/");
+
+	t.is(res.status, 200);
+	t.is(res.type, "text/html");
 });
