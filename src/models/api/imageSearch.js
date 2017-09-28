@@ -1,7 +1,7 @@
 const GoogleImages = require("google-images");
-const client = new GoogleImages(process.env.G_CSE_ID, process.env.G_API_KEY);
 
 async function imageSearch(searchKeyword, historyArray, offset) {
+	const client = new GoogleImages(process.env.G_CSE_ID, process.env.G_API_KEY);
 	if (!searchKeyword) throw new Error("Missing search keyword");
 	if (!historyArray || !Array.isArray(historyArray))
 		throw new Error("Missing history array");

@@ -1,4 +1,3 @@
-require("dotenv-extended").load({ errorOnMissing: true });
 const express = require("express");
 const app = express();
 
