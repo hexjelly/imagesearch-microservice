@@ -14,7 +14,7 @@ cd imagesearch-microservice
 npm install
 ```
 
-2.  Start the server with `npm run`!
+2.  Start the server with `npm run start`!
 
 
 ## Contributing & Issues
