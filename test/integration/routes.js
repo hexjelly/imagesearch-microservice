@@ -31,6 +31,7 @@ test("api/imagesearch/", async t => {
 
 test.serial("api/imagesearch/test", async t => {
 	const res = await supertest(app).get("/api/imagesearch/sloth");
+
 	t.is(res.status, 200);
 	t.is(res.type, "application/json");
 	t.falsy(res.body.error);

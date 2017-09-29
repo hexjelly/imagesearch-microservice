@@ -14,13 +14,7 @@ cd imagesearch-microservice
 npm install
 ```
 
-2.  Add a `.env` file in the root directory with Google API credentials (see `.env.schema`):
-```
-G_CSE_ID=YOUR_ID
-G_API_KEY=YOUR_KEY
-```
-
-3.  Start the server with `npm run`!
+2.  Start the server with `npm run`!
 
 
 ## Contributing & Issues
