@@ -1,23 +1,27 @@
-const GoogleImages = require("google-images");
+const got = require("got");
 
 async function imageSearch(searchKeyword, historyArray, offset) {
 	if (!searchKeyword) throw new Error("Missing search keyword");
 	if (!historyArray || !Array.isArray(historyArray))
 		throw new Error("Missing history array");
 	if (offset && isNaN(offset)) throw new Error("Offset is not a number");
-	const client = new GoogleImages(process.env.G_CSE_ID, process.env.G_API_KEY);
-	const searchResult = await client.search(searchKeyword, { page: offset });
+
+	const url = `https://api.qwant.com/api/search/images?count=10&q=${searchKeyword}&offset=${offset
+		? offset
+		: 1}`;
+	const searchResult = await got(url, { json: true });
+
 	const logEntry = { searchKeyword, date: new Date() };
 	historyArray.unshift(logEntry);
-	return searchResult.map(reformatResults);
+	return searchResult.body.data.result.items.map(reformatResults);
 }
 
 function reformatResults(elem) {
 	return {
-		url: elem.url,
-		thumbnail: elem.thumbnail.url,
-		description: elem.description,
-		context: elem.parentPage
+		url: elem.media,
+		thumbnail: `https:${elem.thumbnail}`,
+		description: elem.title,
+		context: elem.url
 	};
 }
 
