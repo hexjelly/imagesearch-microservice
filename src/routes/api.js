@@ -3,10 +3,6 @@ const router = express.Router();
 const imageSearch = require("../models/api/imageSearch");
 const latestSearches = require("../models/api/latestSearches");
 
-router.get("/", (req, res) => {
-	res.status(400).json({ error: "Invalid API endpoint" });
-});
-
 const searchHistory = [];
 
 router.get("/imagesearch/:keyword", async (req, res) => {
@@ -21,6 +17,10 @@ router.get("/imagesearch/:keyword", async (req, res) => {
 
 router.get("/latest", (req, res) => {
 	res.json(latestSearches(searchHistory));
+});
+
+router.get("/*", (req, res) => {
+	res.status(400).json({ error: "Invalid API endpoint" });
 });
 
 module.exports = router;
