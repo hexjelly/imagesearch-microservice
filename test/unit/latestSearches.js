@@ -1,7 +1,7 @@
 import test from "ava";
 import latestSearches from "../../src/models/api/latestSearches";
 
-test("latestSearches: gives correct results with <=10 history entries", t => {
+test("gives correct results with <=10 history entries", t => {
 	// test with 6 entries first
 	let searchHistory = ["test1", "test2", "test3", "test4", "test5", "test6"];
 	let result = latestSearches(searchHistory);
@@ -35,7 +35,7 @@ test("latestSearches: gives correct results with <=10 history entries", t => {
 	]);
 });
 
-test("latestSearches: gives correct results with >10 history entries", t => {
+test("gives correct results with >10 history entries", t => {
 	// test with 11 entries first
 	let searchHistory = [
 		"test1",
