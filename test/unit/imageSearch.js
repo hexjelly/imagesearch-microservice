@@ -1,5 +1,3 @@
-import dotenv from "dotenv-extended";
-dotenv.load({ errorOnMissing: true });
 import test from "ava";
 import imageSearch from "../../src/models/api/imageSearch";
 

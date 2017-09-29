@@ -1,5 +1,3 @@
-import dotenv from "dotenv-extended";
-dotenv.load({ errorOnMissing: true });
 import supertest from "supertest";
 import test from "ava";
 import app from "../../src/app";
