@@ -1,19 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Test</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.min.css">
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Test
-      </h1>
-    </div>
-  </section>
-  </body>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image search microservice API</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.min.css">
+	<style media="screen">
+		pre {
+			tab-size: 2;
+			margin-top: 1em;
+		}
+	</style>
+</head>
+
+<body>
+
+	<section class="hero is-dark is-bold">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">Image search microservice API</h1>
+				<h2 class="subtitle">A freeCodeCamp challenge project</h2>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<p>Made for <a href="https://www.freecodecamp.org/challenges/image-search-abstraction-layer">this freeCodeCamp challenge</a>. Provides an abstraction layer on top of the <a href="https://www.qwant.com/">Qwant</a> API, creating a microservice for easier
+				use.
+			</p>
+			<p>Uses Node with Express, with Ava and Supertest for testing. HTML presentation using the Bulma framework.</p>
+			<p>Source code available on <a href="https://github.com/hexjelly/imagesearch-microservice"><i class="icon fa fa-github"></i>Github</a> under a Apache-2.0 license.
+			</p>
+		</div>
+	</section>
+
+	<section class="section" style="padding-top: 0">
+		<div class="container">
+			<h1 class="title is-spaced">API usage</h1>
+			<h2 class="subtitle">Search:</h2>
+			<article class="message is-info">
+				<div class="message-header has-text-weight-bold">
+					<span>/api/imagesearch/<em>{keyword}</em>[?offset=<em>{number}</em>]</span><a class="button is-small is-success" href="/api/imagesearch/pizza?offset=10">Demo</a>
+				</div>
+				<div class="message-body">
+					<p>
+						<span class="tag is-success">200</span> Returns an array of a <strong><em>maximum of 10</em></strong> search results for <strong><em>{keyword}</em></strong>, offset by <strong><em>{number}</em></strong>.
+					</p>
+					<pre class="box">[
+	{
+		"url": "string",
+		"thumbnail": "string",
+		"description": "string",
+		"context": "string"
+	}, ...
+]</pre>
+
+					<p>
+						<span class="tag is-danger">400</span> Returns an <strong>error</strong> property on any potential errors.
+					</p>
+					<pre class="box">{
+	"error": "string"
+}</pre>
+				</div>
+			</article>
+
+			<h2 class="subtitle">Search history:</h2>
+			<article class="message is-info">
+				<div class="message-header has-text-weight-bold">
+					<span>/api/latest/</span><a class="button is-small is-success" href="/api/latest/">Demo</a>
+				</div>
+				<div class="message-body">
+					<p>
+						<span class="tag is-success">200</span> Returns an array of a <strong><em>maximum of 10</em></strong> search history entries.
+					</p>
+					<pre class="box">
+[
+	{
+		"searchKeyword": "string",
+		"date": "2017-09-30T02:04:42.224Z" // ISO 8601 format
+	}, ...
+]
+</pre>
+
+					<p>
+						<span class="tag is-danger">400</span> Returns an <strong>error</strong> property on any potential errors.
+					</p>
+					<pre class="box">{
+	"error": "string"
+}</pre>
+				</div>
+			</article>
+
+		</div>
+	</section>
+
+</body>
+
 </html>
